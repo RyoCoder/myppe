@@ -27,6 +27,9 @@ logger = logging.getLogger("NoPMMod")
 def register(cb):
     cb(AntiPMMod())
 
+Text = "<code>Hey there!This is a bot. Unfortunately, my master don't accept private messages from "
+                                        "strangers.\n\nPlease contact him in a group, or</code> <b>wait</b> "
+                                        "<code>for him to approve you.Do not spam else I will block and report you as spam.</code>"
 
 class AntiPMMod(loader.Module):
     """Prevents people sending you unsolicited private messages"""
@@ -163,10 +166,7 @@ class AntiPMMod(loader.Module):
             if self.get_allowed(message.from_id):
                 logger.debug("Authorised pm detected")
             else:
-                await message.respond(_("<code>Hey there!This is a bot. Unfortunately, my master don't accept private messages from "
-                                        "strangers.\n\nPlease contact him in a group, or</code> <b>wait</b> "
-                                        "<code>for him to approve you.Do not spam else I will block and report you as spam.</code>"))
-                max = self._db.get("NoPMMod", "msglimit")
+                await message.respond(_(Text))
                 self.count += 1
                 if self.count >= max:
                 	await message.respond(_("<code>Hey! I don't appreciate you barging into my PM like this! "
