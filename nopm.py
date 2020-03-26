@@ -27,10 +27,8 @@ logger = logging.getLogger("NoPMMod")
 def register(cb):
     cb(AntiPMMod())
 
-Text = "<code>Hey there!This is a bot. Unfortunately, my master don't accept private messages from "
-                                        "strangers.\n\nPlease contact him in a group, or</code> <b>wait</b> "
-                                        "<code>for him to approve you.Do not spam else I will block and report you as spam.</code>"
-
+Text = "Hey there!This is a bot. Unfortunately, my master don't accept private messages from strangers.\n\nPlease contact him in a group or wait form him to approve you./nDo not spam else I will block and report you as spam." 
+                                        
 class AntiPMMod(loader.Module):
     """Prevents people sending you unsolicited private messages"""
     def __init__(self):
