@@ -70,6 +70,7 @@ class AntiPMMod(loader.Module):
             await message.edit(_("<code>Who shall I allow to PM?</code>"))
             return
         self._db.set("NoPMMod", "allow", list(set(self._db.get("NoPMMod", "allow", [])).union({user})))
+        await message.delete(Text)
         await message.edit(_("<code>My owner has allowed</code> <a href='tg://user?id={}'>you</a> "
                              "<code>to PM now</code>").format(user))
 
