@@ -17,7 +17,7 @@ async def lastfm(event):
     username = event.pattern_match.group(1)
 
     if not username:
-        username = satwik23
+        username = "satwik23"
     network = LastFMNetwork(api_key="21fd0e47a8c7466aac2500aca3072d2a")
     user = network.get_user(username)
     current_track = user.get_now_playing()
