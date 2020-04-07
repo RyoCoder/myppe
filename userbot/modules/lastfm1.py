@@ -27,7 +27,7 @@ async def lastfm(event):
         except IndexError:
             track_cover = None
             pass
-        msg = "**{}** is currently listening to:\n [🎧]({}) `{}`".format(user,track_cover,current_track)
+        msg = "**My owner is currently listening to:\n [🎧]({}) {}**".format(track_cover,current_track)
     else:
         msg = "**{}** was listening to:\n".format(username)
         recent_tracks = user.get_recent_tracks(limit=3)
