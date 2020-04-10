@@ -11,7 +11,7 @@ import os
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
-DOGBIN_URL = "https://del.dog/"
+DOGBIN_URL = "https://hastebin.com/"
 
 @register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
