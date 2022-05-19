@@ -105,6 +105,9 @@ async def welcome_mute(welcm):
                     elif "bit.ly/" in message.text:
                         reason = "Match on `bit.ly` URLs"
                         spambot = True
+                    elif "t.me/" in user.bio:
+                        reason = "Match on `bit.ly` URLs"
+                        spambot = True    
                     else:
                         if user.first_name in (
                                 "Bitmex",
